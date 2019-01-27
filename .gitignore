@@ -8,4 +8,4 @@
 # .tfvars files
 *.tfvars
 
-secrets\.tf
+secrets\.tfvars

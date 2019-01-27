@@ -4,6 +4,8 @@ module "tfm_ecr" {
   repo_name        = "${var.name_prefix}-ecr-flaskapi"
   repo_description = "${var.desc_prefix} - AWS ECR for Flask API App"
   license_template = "mit"
+  private_repo     = false
+  github_org       = ""
 
   team_count = 0
 
