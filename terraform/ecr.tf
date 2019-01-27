@@ -1,8 +1,8 @@
 module "tfm_ecr" {
   source = "github.com/ruebroad/terraform-aws-rb-github?ref=v0.0.3"
 
-  repo_name        = "${var.name_prefix}-ecr-flaskapi"
-  repo_description = "${var.desc_prefix} - AWS ECR for Flask API App"
+  repo_name        = "${var.name_prefix}-aws-ecr"
+  repo_description = "${var.desc_prefix} - ECR"
   license_template = "mit"
   private_repo     = false
   github_org       = "${var.github_organization}"
