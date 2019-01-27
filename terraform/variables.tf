@@ -10,3 +10,7 @@ variable "desc_prefix" {
 
 variable "github_token" {}
 variable "circleci_token" {}
+
+variable "github_organization" {
+  default = ""
+}
