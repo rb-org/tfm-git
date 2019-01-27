@@ -6,6 +6,7 @@ provider "github" {
 module "terraform" {
   source = "./terraform"
 
-  github_token   = "${var.github_token}"
-  circleci_token = "${var.circleci_token}"
+  github_token        = "${var.github_token}"
+  circleci_token      = "${var.circleci_token}"
+  github_organization = "${var.github_organization}"
 }
