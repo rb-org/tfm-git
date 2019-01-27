@@ -1,0 +1,95 @@
+version: 2
+jobs:
+  feat_plan:
+    docker:
+      - image: hashicorp/terraform:light
+    steps:
+      - checkout
+      - run:
+          name: export aws creds
+          command: |
+            chmod +x .circleci/export_aws.sh
+            .circleci/export_aws.sh
+      - run: 
+          name: init
+          command: |
+            terraform init -input=false
+            if [ $? != "0" ]; then exit $?; fi
+      - run: 
+          name: lint-validate
+          command: |
+            chmod +x .circleci/lint.sh
+            chmod +x .circleci/validate.sh
+            .circleci/lint.sh
+            .circleci/validate.sh
+      - run: mkdir -p plans
+      - run: terraform plan -input=false -var github_token=$github_token -var circleci_token=$cci_token
+  plan:
+    docker:
+      - image: hashicorp/terraform:light
+    steps:
+      - checkout
+      - run:
+          name: export aws creds
+          command: |
+            chmod +x .circleci/export_aws.sh
+            .circleci/export_aws.sh
+      - run: 
+          name: init
+          command: |
+            terraform init -input=false
+            if [ $? != "0" ]; then exit $?; fi
+      - run: 
+          name: lint-validate
+          command: |
+            chmod +x .circleci/lint.sh
+            chmod +x .circleci/validate.sh
+            .circleci/lint.sh
+            .circleci/validate.sh
+      - run: mkdir -p plans
+      - run: terraform plan -input=false -var github_token=$github_token -var circleci_token=$cci_token -out=plans/tfm.plan
+      - persist_to_workspace:
+          root: plans
+          paths:
+            - tfm.plan
+  apply:
+    docker:
+      - image: hashicorp/terraform:light
+    steps:
+      - checkout
+      - run:
+          name: export aws creds
+          command: |
+            chmod +x .circleci/export_aws.sh
+            .circleci/export_aws.sh
+      - run: 
+          name: init
+          command: |
+            terraform init -input=false
+            if [ $? != "0" ]; then exit $?; fi
+      - run: mkdir -p plans
+      - attach_workspace:
+          at: plans
+      - run: terraform apply -input=false -auto-approve plans/tfm.plan
+workflows:
+  version: 2
+  plan_apply:
+    jobs:
+      - feat_plan:
+          context: terraform
+          filters:
+            branches:
+              ignore: master
+      - plan:
+          context: terraform
+          filters:
+            branches:
+              only: master
+      - apply:
+          context: terraform
+          requires:
+            - plan
+          filters:
+            branches:
+              only: master
+  
