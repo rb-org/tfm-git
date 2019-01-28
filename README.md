@@ -12,5 +12,3 @@
 | github\_token |  | string | n/a | yes |
 | github\_organization |  | string | `"rb-org"` | no |
 | name\_prefix |  | string | `""` | no |
-
-.

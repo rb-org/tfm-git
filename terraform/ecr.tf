@@ -1,5 +1,5 @@
 module "tfm_ecr" {
-  source = "github.com/ruebroad/terraform-aws-rb-github?ref=v0.0.3"
+  source = "github.com/rb-org/terraform-aws-rb-github?ref=v0.0.3"
 
   repo_name        = "${var.name_prefix}-aws-ecr"
   repo_description = "${var.desc_prefix} - ECR"

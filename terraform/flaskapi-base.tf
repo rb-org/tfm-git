@@ -1,5 +1,5 @@
 module "tfm_flaskapi_base" {
-  source = "github.com/ruebroad/terraform-aws-rb-github?ref=v0.0.3"
+  source = "github.com/rb-org/terraform-aws-rb-github?ref=v0.0.3"
 
   repo_name        = "${var.name_prefix}-aws-flaskapi-base"
   repo_description = "${var.desc_prefix} - FlaskApi - Base"
