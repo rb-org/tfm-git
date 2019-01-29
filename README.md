@@ -2,7 +2,7 @@
 
 ## Build Status
 
-[![CircleCI](https://circleci.com/gh/ruebroad/tfm-git.svg?style=svg&circle-token=a5f4fce3f54534bc5f6afee116accb0c246bb220)](https://circleci.com/gh/ruebroad/tfm-git)
+[![CircleCI](https://circleci.com/gh/rb-org/tfm-git/tree/master.svg?style=svg&circle-token=ae243ef5df0c7114d817724a928e4fb1b2899c4f)](https://circleci.com/gh/rb-org/tfm-git/tree/master)
 
 ## Inputs
 
