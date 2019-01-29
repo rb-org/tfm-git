@@ -16,7 +16,7 @@ module "tfm_flaskapi_base" {
   enable_branch_protection = true
   enforce_admins           = false
   strict_status_checks     = true
-  contexts                 = ["feat_plan"]
+  contexts                 = ["ci/circleci: feat_plan"]
 
   # CircleCI
   update_circleci = true
