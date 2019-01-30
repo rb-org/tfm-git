@@ -9,5 +9,5 @@
 |------|-------------|:----:|:-----:|:-----:|
 | circleci\_token |  | string | n/a | yes |
 | github\_token |  | string | n/a | yes |
-| github\_organization |  | string | `"rb-org"` | no |
+| github\_organization |  | string | `"rb-org"` | yes |
 | name\_prefix |  | string | `""` | no |
