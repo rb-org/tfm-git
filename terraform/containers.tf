@@ -1,5 +1,5 @@
 module "tfm_containers" {
-  source = "github.com/rb-org/terraform-aws-rb-github?ref=v0.0.3"
+  source = "github.com/rb-org/terraform-aws-rb-github?ref=v0.0.4"
 
   repo_name        = "${var.name_prefix}-aws-containers"
   repo_description = "${var.desc_prefix} - containers"
