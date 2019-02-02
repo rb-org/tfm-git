@@ -1,4 +1,3 @@
-# data "github_team" "automation" {
-#   slug = "automation"
-# }
-
+data "github_team" "admins" {
+  slug = "admins"
+}

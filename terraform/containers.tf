@@ -6,10 +6,10 @@ module "tfm_containers" {
   license_template = "mit"
   private_repo     = false
   github_org       = "${var.github_organization}"
-  team_count       = 0
+  team_count       = 1
 
   teams = "${list(
-    
+    map("team", var.gh_team_id_admins, "perms", "admin"),
   )}"
 
   # Master branch protection
