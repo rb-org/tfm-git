@@ -14,3 +14,5 @@ variable "circleci_token" {}
 variable "github_organization" {
   default = ""
 }
+
+variable "gh_team_id_admins" {}

@@ -7,10 +7,10 @@ module "tfm_aws_cw" {
   license_template = "mit"
   private_repo     = false
   github_org       = "${var.github_organization}"
-  team_count       = 0
+  team_count       = 1
 
   teams = "${list(
-    
+    map("team", var.gh_team_id_admins, "perms", "admin"),
   )}"
 
   # Master branch protection
@@ -34,10 +34,10 @@ module "tfm_aws_ec2" {
   license_template = "mit"
   private_repo     = false
   github_org       = "${var.github_organization}"
-  team_count       = 0
+  team_count       = 1
 
   teams = "${list(
-    
+    map("team", var.gh_team_id_admins, "perms", "admin"),
   )}"
 
   # Master branch protection
@@ -61,10 +61,10 @@ module "tfm_aws_ebs_vol" {
   license_template = "mit"
   private_repo     = false
   github_org       = "${var.github_organization}"
-  team_count       = 0
+  team_count       = 1
 
   teams = "${list(
-    
+    map("team", var.gh_team_id_admins, "perms", "admin"),
   )}"
 
   # Master branch protection
