@@ -9,3 +9,5 @@
 *.tfvars
 
 secrets\.tfvars
+
+repo\.log
