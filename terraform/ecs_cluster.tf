@@ -1,5 +1,5 @@
 module "tfm_ecs_cluster" {
-  source = "github.com/rb-org/terraform-aws-rb-github?ref=v0.0.5"
+  source = "github.com/rb-org/terraform-aws-rb-github?ref=v0.0.4"
 
   repo_name        = "${var.name_prefix}-aws-ecs-cluster"
   repo_description = "${var.desc_prefix} - ECS Cluster"
