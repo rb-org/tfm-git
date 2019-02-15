@@ -164,7 +164,7 @@ module "tfm_ecs" {
 # SNS Slack
 
 module "tfm_sns_slack" {
-  source = "github.com/rb-org/tfm-aws-mod-sns-slack?ref=v0.0.4"
+  source = "github.com/rb-org/terraform-aws-rb-githubk?ref=v0.0.4"
 
   repo_name        = "${var.name_prefix}-aws-mod-sns-slack"
   repo_description = "${var.desc_prefix} - Module SNS Slack"
