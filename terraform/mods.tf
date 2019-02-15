@@ -160,3 +160,31 @@ module "tfm_ecs" {
   circleci_token  = "${var.circleci_token}"
   github_token    = "${var.github_token}"
 }
+
+# SNS Slack
+
+module "tfm_ecs" {
+  source = "github.com/rb-org/tfm-aws-mod-sns-slack?ref=v0.0.4"
+
+  repo_name        = "${var.name_prefix}-aws-mod-sns-slack"
+  repo_description = "${var.desc_prefix} - Module SNS Slack"
+  license_template = "mit"
+  private_repo     = false
+  github_org       = "${var.github_organization}"
+  team_count       = 1
+
+  teams = "${list(
+    map("team", var.gh_team_id_admins, "perms", "admin"),
+  )}"
+
+  # Master branch protection
+  enable_branch_protection = true
+  enforce_admins           = false
+  strict_status_checks     = true
+  contexts                 = ["ci/circleci: lint_validate"]
+
+  # CircleCI
+  update_circleci = true
+  circleci_token  = "${var.circleci_token}"
+  github_token    = "${var.github_token}"
+}
