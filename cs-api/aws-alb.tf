@@ -16,7 +16,7 @@ module "tfm_aws_alb" {
   enable_branch_protection = true
   enforce_admins           = false
   strict_status_checks     = true
-  contexts                 = ["ci/circleci: feat_plan"]
+  contexts                 = ["ci/circleci: feat2dev_plan"]
 
   # CircleCI
   update_circleci = true
