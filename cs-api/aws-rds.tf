@@ -16,7 +16,7 @@ module "tfm_aws_rds" {
   enable_branch_protection = true
   enforce_admins           = false
   strict_status_checks     = true
-  contexts                 = ["ci/circleci: featdev_plan"]
+  contexts                 = ["ci/circleci: feat2dev_plan"]
 
   # CircleCI
   update_circleci = true
