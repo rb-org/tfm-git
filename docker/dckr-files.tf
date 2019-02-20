@@ -1,8 +1,8 @@
 module "dckr_tfm" {
   source = "github.com/rb-org/terraform-aws-rb-github?ref=v0.0.4"
 
-  repo_name        = "${var.name_prefix}-terraform"
-  repo_description = "${var.desc_prefix} - Terraform"
+  repo_name        = "${var.name_prefix}-files"
+  repo_description = "${var.desc_prefix}"
   license_template = "mit"
   private_repo     = false
   github_org       = "${var.github_organization}"
