@@ -1,4 +1,4 @@
-module "tfm_aws_eks" {
+module "tfm_aws_eks_dash" {
   source = "github.com/rb-org/terraform-aws-rb-github?ref=v0.0.6"
 
   repo_name        = "${var.name_prefix}-aws-eks-dashboard"
