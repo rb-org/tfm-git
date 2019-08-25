@@ -3,6 +3,7 @@
 ## Build Status
 
 [![CircleCI](https://circleci.com/gh/rb-org/tfm-git/tree/master.svg?style=svg&circle-token=a5f4fce3f54534bc5f6afee116accb0c246bb220)](https://circleci.com/gh/rb-org/tfm-git/tree/master)
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
